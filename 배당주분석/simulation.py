@@ -123,6 +123,10 @@ class Account:
     
     #배당금 입금
     def get_dividends(self, code:str,div_price:int):
+
+        if div_price == 0:
+            return 0
+
         acc = self.get_account()
         add_balance = 0
         for stock in acc['stocks']:
